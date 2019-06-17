@@ -1,13 +1,15 @@
-const http = require('http');
+const express = require('express');
 
+const app = express();
 
-const server = http.createServer((req, res) => {
-   // console.log(req);
-   res.setHeader('Content-type', 'text/html');
-   res.write('<html>');
-   res.write('<head><title>My first page</title></head>');
-   res.write('<body><h1>My first page</h1></body>');
-   res.write('</html>');
+app.use((req, res, next) => {
+    console.log('In the middleware!');
+    next(); // Allows the request to continue to the next middleware in line
 });
 
-server.listen(3000);
+app.use((req, res, next) => {
+    console.log('In another middleware!');
+    res.send('<h1>Hello from Express!</h1>');
+});
+
+app.listen(3000);
