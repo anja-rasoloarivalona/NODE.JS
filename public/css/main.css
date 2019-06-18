@@ -92,7 +92,7 @@ main {
     margin: 0 0.25rem;
 }
 
-.btn {
+.button {
   font: inherit;
   border: 1px solid #00695c;
   color: #00695c;
@@ -101,8 +101,8 @@ main {
   cursor: pointer;
 }
 
-.btn:hover,
-.btn:active {
+.button:hover,
+.button:active {
   background-color: #00695c;
   color: white;
 }
