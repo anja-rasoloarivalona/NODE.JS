@@ -11,7 +11,7 @@ const p = path.join(
 const getProductsFromFile = (callback) => {
     fs.readFile(p, (err,fileContent) => {
         if (err) {
-          return  callback([]);
+          callback([]);
         } else {
             callback(JSON.parse(fileContent));
         }    

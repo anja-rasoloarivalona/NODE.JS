@@ -20,9 +20,6 @@ exports.getIndex = (req, res, next) => {
           prods: products,
           pageTitle: 'Shop',
           path: '/',
-          hasProducts: products.length > 0,
-          activeShop: true,
-          productCSS: true
         });
     });
 }
@@ -34,6 +31,13 @@ exports.getCart = (req, res, next) => {
         pageTitle: 'Your Cart'
     })
 }
+
+exports.getOrders = (req, res, next) => {
+  res.render('shop/orders', {
+    path: '/orders',
+    pageTitle: 'Your Orders'
+  });
+};
 
 exports.getCheckout = (req, res, next) => {
   res.render('shop/checkout', {
